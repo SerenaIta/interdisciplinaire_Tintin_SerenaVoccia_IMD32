@@ -40,6 +40,11 @@ footer ul {
 
 .RS_container img {
   max-width: 67px;
+  transition: transform 0.3s ease;
+}
+
+.RS_container img:hover {
+  transform: scale(1.1);
 }
 
 .RS_container {
