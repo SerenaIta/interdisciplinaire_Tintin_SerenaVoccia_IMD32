@@ -1,0 +1,104 @@
+ul {
+  padding-left: 17px;
+  padding-top: 23px;
+}
+
+footer {
+  background: #1c1c1c;
+  padding: 0 50px;
+}
+
+footer h3,
+footer p,
+footer ul {
+  color: white;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.border-top {
+  border-top: 1px solid white;
+  padding: 23px 0;
+  justify-content: space-between;
+}
+
+.first_footer_container,
+.third_footer_container,
+.second_footer_container {
+  flex-direction: column;
+}
+
+.first_footer_container {
+  max-width: 274px;
+}
+
+// .first_footer_container img:first-child {
+//   width: 274px;
+// }
+
+.RS_container img {
+  max-width: 67px;
+}
+
+.RS_container {
+  justify-content: space-between;
+  padding-top: 47px;
+  // gap: 37px;
+}
+
+.flexbox_footer_container {
+  padding: 70px 0;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.second_footer_container {
+  text-align: center;
+}
+
+/* Style du conteneur */
+.newsletter {
+  // max-width: 540px;
+  margin: 0 auto;
+  background-color: white;
+  overflow: hidden;
+  margin-top: 43px;
+}
+
+/* Champ d'email */
+.newsletter input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  color: black;
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* Bouton d'abonnement */
+.newsletter button {
+  background-color: #ffd300;
+  color: #000;
+  border: 1px solid black;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+input::placeholder {
+  color: #cecece;
+}
+
+.newsletter button:hover {
+  // background-color: #ffe100;
+  transform: scale(1.05); /* Légère augmentation de la taille */
+}

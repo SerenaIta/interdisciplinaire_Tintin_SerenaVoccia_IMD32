@@ -1,7 +1,14 @@
+@import "modules/footer";
+
+// ------------------
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
 }
 
 a {
@@ -11,4 +18,21 @@ a {
 img,
 video {
   display: block;
+}
+
+// ------------------
+
+body {
+  max-width: 1440px;
+  margin: auto;
+}
+
+h3 {
+  font-family: "pedestria-mvb", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+div {
+  display: flex;
 }
