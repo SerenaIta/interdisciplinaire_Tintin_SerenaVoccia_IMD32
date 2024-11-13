@@ -1,0 +1,54 @@
+/* Style global du carousel */
+.carousel-container {
+  position: relative;
+  width: 100%; /* Ajuste la largeur du carousel */
+  margin: auto;
+  overflow: hidden;
+  padding-bottom: 200px; /* Espace en bas pour les pastilles */
+  padding-top: 100px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 1s ease-in-out; /* Transition plus lente */
+  justify-content: center; /* Centre les éléments horizontalement */
+}
+
+.rectangle {
+  width: 550px; /* Largeur de chaque rectangle */
+  height: 733px; /* Hauteur de chaque rectangle */
+  transition: transform 0.8s ease-in-out;
+  margin: 0 100px; /* 200px d'espacement total autour de chaque rectangle */
+  flex-shrink: 0; /* Empêche les rectangles de rétrécir */
+}
+
+/* Effet d'agrandissement pour le rectangle central */
+.carousel .rectangle.center {
+  transform: scale(1.2); /* Agrandissement du rectangle central */
+  z-index: 1; /* Ajoute un z-index pour qu'il se superpose correctement */
+}
+
+/* Style des pastilles (indicateurs) */
+.indicators {
+  position: absolute;
+  bottom: 20px; /* Distance du bas du carousel */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px; /* Espacement entre les pastilles */
+  z-index: 1;
+}
+
+.indicator {
+  width: 18px;
+  height: 18px;
+  background-color: #939393;
+  border: 1px solid black; /* Bordure pour rendre visible */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #ffd300;
+}

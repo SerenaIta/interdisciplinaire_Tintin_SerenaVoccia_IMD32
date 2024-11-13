@@ -43,8 +43,9 @@ body {
 
 .progress-wrap {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 46px;
   width: 46px;
   cursor: pointer;
