@@ -82,31 +82,32 @@ const rectangles = carousel.querySelectorAll(".rectangle");
 const indicators = document.querySelectorAll(".indicator");
 let index = 0;
 const totalItems = rectangles.length;
-const rectangleWidth = 600; // Largeur de chaque rectangle
+const rectangleWidth = 550; // Largeur de chaque rectangle définie en CSS
 const margin = 200; // Marge totale autour de chaque rectangle (100px de chaque côté)
 
-/**
- * Fonction pour déplacer le carousel vers la gauche (défilement de droite à gauche)
- */
 function moveToNext() {
-  index = (index + 1) % totalItems; // Incrémente pour aller de droite à gauche
+  index = (index + 1) % totalItems;
   updateCarousel();
 }
 
-/**
- * Mise à jour du carousel avec recentrage de l'image agrandie
- */
 function updateCarousel() {
-  // Calcul du décalage pour centrer le rectangle agrandi
   const containerWidth = document.querySelector(
     ".carousel-container"
   ).offsetWidth;
-  const centerOffset = (containerWidth - rectangleWidth) / 2; // Ajustement centré
-  const offset = -index * (rectangleWidth + margin) + centerOffset; // Inversion du défilement vers la gauche
+
+  // Ajoute 5 pixels pour recentrer légèrement à droite
+  const offset = -(
+    index * (rectangleWidth + margin) -
+    (containerWidth - rectangleWidth) / 2 +
+    margin / 2 -
+    2
+  );
+
+  // Applique l'offset ajusté
   carousel.style.transform = `translateX(${offset}px)`;
 
   rectangles.forEach((rectangle, i) => {
-    rectangle.classList.toggle("center", i === index && i !== 0); // Évite d'agrandir la première image
+    rectangle.classList.toggle("center", i === index);
   });
 
   indicators.forEach((indicator, i) => {
@@ -114,9 +115,6 @@ function updateCarousel() {
   });
 }
 
-/**
- * Fonction de navigation via les pastilles
- */
 function setupIndicators() {
   indicators.forEach((indicator, i) => {
     indicator.addEventListener("click", () => {
@@ -126,7 +124,6 @@ function setupIndicators() {
   });
 }
 
-// Défilement automatique toutes les 3 secondes
-setInterval(moveToNext, 3000); // Appelle moveToNext pour défilement à gauche
+setInterval(moveToNext, 3000);
 setupIndicators();
 updateCarousel();

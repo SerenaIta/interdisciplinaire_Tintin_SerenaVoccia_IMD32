@@ -1,6 +1,7 @@
 @import "modules/footer";
 @import "modules/scroll-button";
 @import "modules/BD_carousel";
+@import "modules/video";
 
 // ------------------
 
@@ -27,6 +28,7 @@ video {
 body {
   max-width: 1440px;
   margin: auto;
+  border: 1px solid black; /* Bordure pour rendre visible */
 }
 
 h3 {
@@ -38,3 +40,5 @@ h3 {
 div {
   display: flex;
 }
+
+// ---------

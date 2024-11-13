@@ -4,14 +4,14 @@
   width: 100%; /* Ajuste la largeur du carousel */
   margin: auto;
   overflow: hidden;
-  padding-bottom: 200px; /* Espace en bas pour les pastilles */
+  padding-bottom: 180px; /* Espace en bas pour les pastilles */
   padding-top: 100px;
+  // margin-bottom: 40px;
 }
 
 .carousel {
   display: flex;
-  transition: transform 1s ease-in-out; /* Transition plus lente */
-  justify-content: center; /* Centre les éléments horizontalement */
+  transition: transform 1s ease-in-out;
 }
 
 .rectangle {
@@ -32,6 +32,7 @@
 .indicators {
   position: absolute;
   bottom: 20px; /* Distance du bas du carousel */
+  left: 23px;
   width: 100%;
   display: flex;
   justify-content: center;
