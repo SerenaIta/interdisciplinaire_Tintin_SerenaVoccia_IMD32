@@ -153,17 +153,41 @@ function updateProgress() {
   rocket.style.left = scrollPercentage + "%";
 }
 
-// -------gsap-fenetre-----
+// -------gsap-fenetre-&-gsap-header---
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".zoom-image", {
-  scale: 1.5, // Zoom de l'image
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".image-container",
+      start: "top top", // Débute l'effet dès que l'image est en haut de la fenêtre
+      end: "bottom top", // Termine l'effet quand le bas de l'image arrive en haut de la fenêtre
+      scrub: true, // Synchronise le zoom avec le défilement pour plus de fluidité
+      pin: true, // Fixe l'image pour un effet de zoom fixe
+    },
+  })
+  .to(".zoom-image", {
+    scale: 1.5, // Zoom de l'image
+  })
+  .to(
+    "header",
+    {
+      scale: 1.5, // Zoom du header
+      opacity: 0, // Le header devient transparent au fil du scroll
+    },
+    0.5
+  );
+
+// -------gsap-header-----
+
+// Animation du dégradé
+gsap.to(".gradient", {
+  opacity: 1, // Le dégradé devient visible
   scrollTrigger: {
     trigger: ".image-container",
-    start: "top 80%", // L'animation démarre quand le conteneur atteint 80% de la fenêtre
-    end: "bottom 20%", // L'animation se termine quand le conteneur atteint 20% de la fenêtre
-    scrub: true, // Synchronise le zoom avec le défilement
-    markers: true, // Active les marqueurs pour vérifier le début et la fin (optionnel)
+    start: "top bottom", // L'animation commence quand le bas de l'image touche le bas de la fenêtre
+    end: "bottom top", // L'animation se termine quand l'image est complètement défilée
+    scrub: true,
   },
 });
