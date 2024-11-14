@@ -127,3 +127,28 @@ function setupIndicators() {
 setInterval(moveToNext, 3000);
 setupIndicators();
 updateCarousel();
+
+// --------------------rocket------
+
+// Fonction pour mettre à jour la barre et la position de la fusée
+window.onscroll = function () {
+  updateProgress();
+};
+
+function updateProgress() {
+  // Calcul de la hauteur défilée en pourcentage
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+  // Mise à jour de la barre de progression
+  const progressBar = document.getElementById("progress-bar");
+  progressBar.style.width = scrollPercentage + "%";
+
+  // Mise à jour de la position de la fusée
+  const rocket = document.getElementById("rocket");
+  rocket.style.left = scrollPercentage + "%";
+}

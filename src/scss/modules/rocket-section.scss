@@ -1,0 +1,28 @@
+/* Conteneur de la barre de progression */
+.progress-container {
+  position: fixed;
+  width: 1340px;
+  height: 10px;
+  background-color: black;
+  border-radius: 100px; /* arrondi pour le conteneur */
+  margin: 40px 50px 0 50px;
+  z-index: 9999;
+}
+
+/* Barre de progression (fond jaune avec bordure noire et coins arrondis) */
+.progress-bar {
+  background-color: #ffd300; /* couleur jaune de la barre */
+  width: 0;
+  border: 1px solid black; /* bordure noire */
+  border-radius: 100px; /* coins arrondis */
+  transition: width 0.25s;
+}
+
+/* Style de l'image de la fusée */
+.rocket {
+  width: 120px;
+  position: absolute;
+  top: -24px;
+  transform: translateX(-50%);
+  transition: left 0.25s;
+}
