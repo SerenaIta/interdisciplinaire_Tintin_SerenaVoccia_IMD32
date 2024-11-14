@@ -152,3 +152,18 @@ function updateProgress() {
   const rocket = document.getElementById("rocket");
   rocket.style.left = scrollPercentage + "%";
 }
+
+// -------gsap-fenetre-----
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".zoom-image", {
+  scale: 1.5, // Zoom de l'image
+  scrollTrigger: {
+    trigger: ".image-container",
+    start: "top 80%", // L'animation démarre quand le conteneur atteint 80% de la fenêtre
+    end: "bottom 20%", // L'animation se termine quand le conteneur atteint 20% de la fenêtre
+    scrub: true, // Synchronise le zoom avec le défilement
+    markers: true, // Active les marqueurs pour vérifier le début et la fin (optionnel)
+  },
+});

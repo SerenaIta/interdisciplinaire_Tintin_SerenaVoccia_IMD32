@@ -22,3 +22,21 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+// -------------à changer de place------
+
+.image-container {
+  width: 100%; /* Ajuste selon la taille souhaitée */
+  height: 100%; /* Ajuste la hauteur si nécessaire */
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center; /* Centrer l'image pour le zoom */
+  position: relative; /* Pas de position fixe pour éviter d'occuper toute la fenêtre */
+}
