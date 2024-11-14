@@ -1,0 +1,49 @@
+// ----book-details------------------------------
+
+.book_details {
+  flex-direction: column;
+  max-width: 50%;
+  margin: 0 50px;
+}
+
+h2 {
+  padding-bottom: 50px;
+}
+
+b {
+  font-family: "futura-pt", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  padding-top: 50px;
+}
+
+.book_details button {
+  margin-right: auto;
+  margin-top: 50px;
+  background-color: #ffd300;
+  color: #000;
+  border: 1px solid black;
+  padding: 13px 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  justify-content: flex-start;
+}
+
+.book_details button:hover {
+  transform: scale(1.03);
+}
+
+// ----book-carousel------------------------------
+
+.book_carousel {
+  max-width: 50%;
+  margin: 0 50px;
+}
+
+.book_carousel img {
+  max-width: 100%;
+}
