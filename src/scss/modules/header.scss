@@ -1,0 +1,24 @@
+header button {
+  // margin-left: auto;
+  background-color: #ffd300;
+  color: #000;
+  border: 1px solid black;
+  padding: 13px 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  justify-content: flex-end;
+}
+
+header button:hover {
+  transform: scale(1.03);
+}
+
+header {
+  margin: 105px 50px 0 50px;
+  display: flex;
+  justify-content: space-between;
+}

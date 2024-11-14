@@ -4,6 +4,7 @@
 @import "modules/video";
 @import "modules/book_section";
 @import "modules/rocket-section";
+@import "modules/header";
 
 // ------------------
 
@@ -47,6 +48,10 @@ h2 {
 
 div {
   display: flex;
+}
+
+h1 img {
+  max-width: 274px;
 }
 
 // ---------
