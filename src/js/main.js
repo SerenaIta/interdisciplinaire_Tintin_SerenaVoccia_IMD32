@@ -157,6 +157,7 @@ function updateProgress() {
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Créer une timeline pour enchaîner toutes les animations
 gsap
   .timeline({
     scrollTrigger: {
@@ -167,27 +168,26 @@ gsap
       pin: true, // Fixe l'image pour un effet de zoom fixe
     },
   })
+  // Animation du zoom sur l'image
   .to(".zoom-image", {
     scale: 1.5, // Zoom de l'image
   })
+  // Animation du header (zoom + transparence)
   .to(
     "header",
     {
-      scale: 1.5, // Zoom du header
       opacity: 0, // Le header devient transparent au fil du scroll
     },
     0.5
-  );
-
-// -------gsap-header-----
-
-// Animation du dégradé
-gsap.to(".gradient", {
-  opacity: 1, // Le dégradé devient visible
-  scrollTrigger: {
-    trigger: ".image-container",
-    start: "top bottom", // L'animation commence quand le bas de l'image touche le bas de la fenêtre
-    end: "bottom top", // L'animation se termine quand l'image est complètement défilée
-    scrub: true,
-  },
-});
+  )
+  // Animation du dégradé
+  .to(".gradient", {
+    opacity: 1, // Le dégradé devient visible
+    duration: 1, // Durée de l'animation
+  })
+  // Animation du bouton : elle commence après la fin du dégradé
+  .to(".test", {
+    opacity: 1, // Le bouton devient visible
+    duration: 1, // Durée d'apparition
+    delay: 0.2, // Le délai assure que l'animation du bouton commence après celle du dégradé
+  });

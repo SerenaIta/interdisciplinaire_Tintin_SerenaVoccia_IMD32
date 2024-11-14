@@ -63,3 +63,23 @@ header {
   opacity: 0; /* Initialement invisible */
   pointer-events: none; /* Pas d'interférence avec l'interaction de l'utilisateur */
 }
+
+.test {
+  position: absolute;
+  bottom: 50px; /* Ajustez la distance depuis le bas */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Initialement caché */
+  // transition: opacity 0.5s ease; /* Transition fluide */
+  padding: 13px 50px;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  background-color: #ffd300;
+  color: #000;
+  border: 1px solid black;
+  cursor: pointer;
+  text-transform: uppercase;
+  align-items: center;
+  z-index: 9999;
+}
