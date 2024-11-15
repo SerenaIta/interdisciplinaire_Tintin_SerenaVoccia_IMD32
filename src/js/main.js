@@ -191,3 +191,79 @@ gsap
     duration: 1, // Durée d'apparition
     delay: 0.2, // Le délai assure que l'animation du bouton commence après celle du dégradé
   });
+
+// --------helicopter-------
+
+// // Ajouter un événement au clic sur le bouton pour démarrer l'animation de l'hélicoptère
+// document.querySelector(".test").addEventListener("click", () => {
+//   // Animation de l'hélicoptère - Premier mouvement
+//   gsap.to(".helicopter", {
+//     opacity: 1, // L'hélicoptère devient visible
+//     scale: 1, // Le faire revenir à sa taille normale
+//     x: "100vw", // Déplacer l'hélicoptère horizontalement (à droite)
+//     y: "100vh", // Déplacer l'hélicoptère verticalement (en bas)
+//     duration: 4, // Durée de l'animation
+//     ease: "power1.inOut", // Animation fluide
+//     onComplete: () => {
+//       // Réinitialiser l'hélicoptère à la position de départ pour l'animation miroir
+//       gsap.set(".helicopter", {
+//         x: "100vw", // Position initiale après le premier mouvement
+//         y: "100vh", // Position initiale après le premier mouvement
+//       });
+
+//       // Deuxième animation - Mouvement miroir, de bas à droite à bas à gauche
+//       gsap.to(".helicopter", {
+//         scale: 0.3, // Réduire la taille à la fin
+//         x: "-100vw", // Déplacer l'hélicoptère à gauche en sortant de l'écran
+//         y: "150vh", // Le faire descendre plus bas en dehors du conteneur
+//         duration: 4, // Durée du mouvement miroir
+//         ease: "power1.inOut", // Animation fluide
+//       });
+//     },
+//   });
+// });
+
+// document.querySelector(".test").addEventListener("click", () => {
+//   // Animation de l'hélicoptère - Premier mouvement
+//   gsap.to(".helicopter", {
+//     opacity: 1, // L'hélicoptère devient visible
+//     scale: 1, // Le faire revenir à sa taille normale
+//     x: "90vw", // Déplacer l'hélicoptère horizontalement (à droite)
+//     y: "160vh", // Déplacer l'hélicoptère verticalement (en bas)
+//     duration: 4, // Durée de l'animation
+//     ease: "power1.inOut", // Animation fluide
+//     // onComplete: () => {
+//     //   // Une fois le premier mouvement terminé, on lance la deuxième phase
+//     //   gsap.to(".helicopter", {
+//     //     scale: 0.3, // Réduire la taille à la fin
+//     //     x: "-100vw", // Déplacer l'hélicoptère à gauche en sortant de l'écran
+//     //     y: "150vh", // Le faire descendre plus bas en dehors du conteneur
+//     //     duration: 4, // Durée du mouvement miroir
+//     //     ease: "power1.inOut", // Animation fluide
+//     //   });
+//     // },
+//   });
+// });
+
+document.querySelector(".test").addEventListener("click", () => {
+  gsap.to(".helicopter", {
+    opacity: 1, // Visible dès le départ
+    scale: 1, // Taille normale
+    x: "1550px", // Déplacement horizontal jusqu'à la largeur de la page
+    y: "1050px", // Déplacement vertical pour aller plus bas
+    duration: 4, // Durée de l'animation
+    ease: "power1.inOut", // Animation fluide
+    onComplete: () => {
+      // Sortie de l'écran
+      gsap.to(".helicopter", {
+        scale: 0.3, // Taille réduite à la fin
+        x: "-1550px", // Sortie vers la gauche
+        y: "2400px", // Sortie encore plus bas
+        duration: 4, // Durée de la sortie
+        ease: "power1.inOut",
+      });
+    },
+  });
+});
+
+document.querySelector(".helicopter").style.pointerEvents = "none";
