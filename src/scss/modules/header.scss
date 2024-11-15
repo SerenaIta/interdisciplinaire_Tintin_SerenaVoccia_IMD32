@@ -67,8 +67,9 @@ header {
 .test {
   position: absolute;
   bottom: 50px; /* Ajustez la distance depuis le bas */
-  left: 50%;
-  transform: translateX(-50%);
+  left: 34%;
+  right: 34%;
+  // transform: translateX(100%);
   opacity: 0; /* Initialement caché */
   // transition: opacity 0.5s ease; /* Transition fluide */
   padding: 13px 50px;
@@ -82,24 +83,92 @@ header {
   text-transform: uppercase;
   align-items: center;
   z-index: 9999;
+  transition: transform 0.3s ease;
 }
-
+.test:hover {
+  // background-color: #ffe100;
+  transform: scale(1.05); /* Légère augmentation de la taille */
+}
 // ------helicopter------
-
-// .helicopter {
-//   position: absolute;
-//   // top: -150px; /* Le placer en dehors de la fenêtre en haut */
-//   // left: -166px; /* Le placer en dehors de la fenêtre à gauche */
-//   transform: scale(0.3);
-//   z-index: 10; /* Assure que l'hélicoptère est au-dessus des autres éléments */
-// }
 
 .helicopter {
   position: absolute;
   top: -10px; /* Ajustez pour le positionner juste au-dessus du coin gauche */
   left: -400px; /* Ajustez pour qu'il soit légèrement en dehors à gauche */
-  transform: scale(0.3); /* Taille réduite avant le début de l'animation */
+  transform: scale(0.5);
   z-index: 10; /* Le mettre au-dessus des autres éléments */
   opacity: 0;
   pointer-events: none; /* Empêche tout /* Caché avant le début de l’animation */
+}
+
+// -------à changer de place----- projet secret----
+
+.projet-secret {
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 115px;
+}
+
+.projet-secret img {
+  width: 655px;
+  padding-top: 115px;
+  padding-bottom: 68px;
+}
+
+.projet-secret div:first-child {
+  justify-content: center;
+}
+
+.projet-secret button {
+  padding: 13px 50px;
+  margin: auto;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  background-color: #ffd300;
+  color: #000;
+  border: 1px solid black;
+  cursor: pointer;
+  text-transform: uppercase;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.projet-secret button:hover {
+  // background-color: #ffe100;
+  transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
+// ----bouton flèche-----
+
+/* Le deuxième bouton clignotant (initialement caché) */
+.button-clignotant {
+  position: relative;
+  top: 40px;
+  display: none; /* Caché au début */
+  padding: 10px 30px;
+  font-size: 30px;
+  background-color: transparent;
+  color: #ffd300;
+  border: 2px solid #ffd300;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 10000;
+  animation: blink 1.5s infinite; /* Animation clignotante */
+  margin-top: 20px;
+}
+
+/* Animation clignotante de la flèche */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
