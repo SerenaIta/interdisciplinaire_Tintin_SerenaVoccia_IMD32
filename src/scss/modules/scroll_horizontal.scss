@@ -1,0 +1,20 @@
+.container-horizontal {
+  display: block;
+  width: 300%;
+  height: 100%;
+  background-color: aqua;
+  position: relative;
+}
+
+.slider-mask {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: 200%;
+}

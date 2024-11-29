@@ -264,4 +264,29 @@ document
   .addEventListener("click", () => {
     // Afficher le bouton clignotant
     document.querySelector(".button-clignotant").style.display = "inline-block";
+    document.querySelector("body").style.overflow = "hidden";
   });
+
+// ----scroll horizontal-----
+
+document.querySelector(".button-clignotant").addEventListener("click", () => {
+  gsap.to(".container-horizontal", { x: "-100%", duration: 4 });
+});
+
+// ----scroll horizontal-2----
+
+// gsap.to(
+//   ".container-horizontal",
+
+//   {
+//     x: "-200%",
+//     scrollTrigger: {
+//       trigger: ".slider-mask",
+//       pin: true,
+//       scrub: true,
+//       start: "top top",
+//     },
+//   }
+// );
+
+// --------
